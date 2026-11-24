@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pemesanan Tiket – Event Harapan Bangsa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pemesananTiket.css">
+  <link rel="stylesheet" href="../login/login.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar_inner">
+      <a href="../home/index.html" class="navbar_brand">Event Harapan Bangsa</a>
+      <nav class="navbar_menu" aria-label="Menu utama">
+        <a href="../home/index.html">Home</a>
+        <a href="../acara/acara.html" class="active" aria-current="page">Event</a>
+        <a href="../history/history.html">History</a>
+        <a href="../about/about.html">About</a>
+      </nav>
+      <div class="navbar_user">
+        <span>Account</span>
+        <img class="avatar" src="assets/image/profile.png" alt="Foto profil">
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../acara/acara.html" id="breadcrumbDetail">Detail Acara</a> / <span>Pemesanan Tiket</span>
+    </nav>
+
+    <h1 class="page_title">Pemesanan Tiket</h1>
+
+    <div class="layout">
+      <!-- Form -->
+      <form class="card_form" id="orderForm" novalidate>
+        <h2 class="card_title">Pilih Tiket</h2>
+
+        <div class="field">
+          <label for="acara">Acara</label>
+          <div class="select-wrap">
+            <select id="acara" name="acara"></select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="jenis">Jenis tiket</label>
+            <div class="select-wrap">
+              <select id="jenis" name="jenis"></select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="jumlah">Jumlah tiket</label>
+            <input type="number" id="jumlah" name="jumlah" value="1" min="1" max="10">
+            <p class="error" id="err-jumlah"></p>
+          </div>
+        </div>
+
+        <h2 class="card_title card_title--section">Data Pemesan</h2>
+
+        <div class="row">
+          <div class="field">
+            <label for="nama">Nama lengkap</label>
+            <input type="text" id="nama" name="nama" placeholder="Nama sesuai identitas" autocomplete="name">
+            <p class="error" id="err-nama"></p>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="email@contoh.com" autocomplete="email">
+            <p class="error" id="err-email"></p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="telepon">Nomor telepon</label>
+            <input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx" autocomplete="tel" inputmode="numeric">
+            <p class="error" id="err-telepon"></p>
+          </div>
+        </div>
+      </form>
+
+      <!-- Ringkasan -->
+      <aside class="card summary" aria-label="Ringkasan pesanan">
+        <h2 class="card_title card_title--small">Ringkasan Pesanan</h2>
+
+        <div class="summary_event">
+          <img class="summary_thumb" id="sumThumb" src="" alt="">
+          <div>
+            <p class="summary_name" id="sumNama">Konser Musik Kampus</p>
+            <p class="summary_meta" id="sumMeta">12 Des 2026 · Bandung</p>
+          </div>
+        </div>
+
+        <div class="summary_line">
+          <span id="sumItem">Reguler × 1</span>
+          <strong id="sumItemHarga">Rp75.000</strong>
+        </div>
+
+        <hr>
+
+        <div class="summary_total">
+          <span>Total</span>
+          <strong id="sumTotal">Rp75.000</strong>
+        </div>
+
+        <button type="submit" form="orderForm" class="btn btn--primary" id="btnKonfirmasi">Konfirmasi Pesanan</button>
+        <a href="../acara/acara.html" id="backDetail" class="btn btn--outline">Kembali ke Detail Acara</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer_inner">
+      <p>&copy; 2026 Event Harapan Bangsa. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Modal pilih pembayaran -->
+  <div class="modal" id="payModal" hidden>
+    <div class="modal_box" role="dialog" aria-modal="true" aria-labelledby="payTitle">
+      <h2 id="payTitle">Pilih pembayaran</h2>
+      <p class="modal_sub">Total yang dibayar <strong id="payTotal">Rp75.000</strong></p>
+
+      <div class="pay-options" id="payOptions">
+        <button type="button" class="pay-option" data-method="QRIS">
+          <span class="pay-option_icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v1M14 20h1M18 18h3v3h-3z"/></svg>
+          </span>
+          <span>
+            <strong>QRIS</strong>
+            <small>Bayar lewat e-wallet atau m-banking</small>
+          </span>
+        </button>
+        <button type="button" class="pay-option" data-method="Kartu Kredit">
+          <span class="pay-option_icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg>
+          </span>
+          <span>
+            <strong>Kartu Kredit</strong>
+            <small>Visa, Mastercard, JCB</small>
+          </span>
+        </button>
+      </div>
+
+      <p class="pay-processing" id="payProcessing" hidden>
+        <span class="spinner" aria-hidden="true"></span>
+        Memproses pembayaran…
+      </p>
+
+      <button type="button" class="btn btn--outline btn--small" id="payCancel">Batal</button>
+    </div>
+  </div>
+
+  <!-- Modal tiket -->
+  <div class="modal" id="ticketModal" hidden>
+    <div class="modal_box modal_box--wide" role="dialog" aria-modal="true" aria-labelledby="ticketTitle">
+      <h2 id="ticketTitle">Pembayaran berhasil</h2>
+      <p class="modal_sub" id="ticketSub"></p>
+      <canvas id="ticketCanvas" class="ticket-canvas" aria-label="Tiket dengan QR code"></canvas>
+      <div class="modal_actions">
+        <button type="button" class="btn btn--primary" id="btnDownload">Download tiket</button>
+        <button type="button" class="btn btn--outline btn--small" id="ticketClose">Lihat History</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../jquery-4.0.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+  <script src="../login/login.js"></script>
+  <script src="pemesananTiket.js"></script>
+</body>
+</html>

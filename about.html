@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Event Harapan Bangsa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="../login/login.css" />
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div class="navbar_inner">
+        <a href="../home/index.html" class="navbar_brand">Event Harapan Bangsa</a>
+        <nav class="navbar_menu" aria-label="Menu utama">
+          <a href="../home/index.html">Home</a>
+          <a href="../acara/acara.html">Event</a>
+          <a href="../history/history.html">History</a>
+          <a href="../about/about.html" class="active" aria-current="page">About</a>
+        </nav>
+        <div class="navbar_user">
+          <span>Account</span>
+          <img class="avatar" src="../home/assets/image/profile.png" alt="Foto profil" />
+        </div>
+      </div>
+    </header>
+
+    <header class="page-header">
+      <h1>Tentang Event Harapan Bangsa</h1>
+      <p>Portal acara dan tiket untuk menemukan seminar dan workshop.</p>
+    </header>
+
+    <main>
+      <section class="about-grid">
+        <div>
+          <h2>Apa itu Eventify?</h2>
+          <p>
+            Eventify adalah website portal acara dan tiket untuk membantu
+            mahasiswa dan masyarakat umum mencari acara dengan mudah. Pengguna
+            bisa mencari acara, melihat detailnya, lalu mencoba simulasi
+            pemesanan tiket tanpa pembayaran sungguhan.
+          </p>
+        </div>
+        <img src="../about/assets/image/logo.png" alt="Logo Event Harapan Bangsa" />
+      </section>
+      <section>
+        <h2>Tujuan Website</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Tujuan</h3>
+            <p>Mengumpulkan informasi acara dalam satu portal.</p>
+          </article>
+          <article class="card">
+            <h3>Target Pengguna</h3>
+            <p>Mahasiswa, pelajar, dan masyarakat umum.</p>
+          </article>
+          <article class="card">
+            <h3>Jenis Acara</h3>
+            <p>Seminar dan workshop di lingkungan ITHB.</p>
+          </article>
+        </div>
+      </section>
+      <section>
+        <h2>Fitur Website</h2>
+
+        <div class="tabs">
+          <button type="button" class="tab active" data-tab="event">Event</button>
+          <button type="button" class="tab" data-tab="tiket">Pemesanan</button>
+          <button type="button" class="tab" data-tab="history">History</button>
+        </div>
+
+        <div class="card tab-isi" id="tab-event">
+          <p>Cari acara, filter kategori dan tanggal, urutkan harga, serta lihat detail acara.</p>
+        </div>
+        <div class="card tab-isi" id="tab-tiket" hidden>
+          <p>Isi formulir pemesanan dan total harga dihitung otomatis.</p>
+        </div>
+        <div class="card tab-isi" id="tab-history" hidden>
+          <p>Lihat daftar pesanan tiket yang pernah dibuat.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Pertanyaan Umum</h2>
+
+        <div class="card faq">
+          <button type="button" class="faq-tanya">Apakah pemesanan tiket berbayar?</button>
+          <p class="faq-jawab" hidden>Tidak, pemesanan hanya simulasi tanpa pembayaran.</p>
+        </div>
+        <div class="card faq">
+          <button type="button" class="faq-tanya">Bagaimana cara mencari acara?</button>
+          <p class="faq-jawab" hidden>Buka halaman Event, lalu pakai pencarian atau filter.</p>
+        </div>
+        <div class="card faq">
+          <button type="button" class="faq-tanya">Di mana melihat pesanan saya?</button>
+          <p class="faq-jawab" hidden>Semua pesanan ada di halaman History.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Dibuat oleh Kelompok 5</h2>
+        <p class="sub">Tugas Besar Web Design</p>
+
+        <div class="anggota-grid">
+          <article class="anggota">
+            <div class="foto">
+              <span>J</span>
+              <img src="../about/assets/image/Jona Kasep.jpeg" alt="Foto Jonathan Kevinno Jullo" onerror="this.style.display='none'" />
+            </div>
+            <h3>Jonathan Kevinno Jullo</h3>
+            <p>1126011</p>
+          </article>
+
+          <article class="anggota">
+            <div class="foto">
+              <span>M</span>
+              <img src="../about/assets/image/Mozza Keju.jpeg" alt="Foto Mozza Aqiela Khairunnisa" onerror="this.style.display='none'" />
+            </div>
+            <h3>Mozza Aqiela Khairunnisa</h3>
+            <p>1126041</p>
+          </article>
+
+          <article class="anggota">
+            <div class="foto">
+              <span>G</span>
+              <img src="../about/assets/image/Giyo Sigma.jpeg" alt="Foto Geoffrey Germaine Grady Situmorang" onerror="this.style.display='none'" />
+            </div>
+            <h3>Geoffrey Germaine Grady Situmorang</h3>
+            <p>1126051</p>
+          </article>
+
+          <article class="anggota">
+            <div class="foto">
+              <span>M</span>
+              <img src="../about/assets/image/Hisyam Ganteng.jpeg" alt="Foto Muhammad Hisyam Nurhan" onerror="this.style.display='none'" />
+            </div>
+            <h3>Muhammad Hisyam Nurhan</h3>
+            <p>1126055</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer_inner">
+        <p>&copy; 2026 Event Harapan Bangsa. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../jquery-4.0.0.js"></script>
+    <script src="../login/login.js"></script>
+    <script src="about.js"></script>
+  </body>
+</html>

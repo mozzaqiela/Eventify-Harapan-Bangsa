@@ -1,0 +1,271 @@
+@media (max-width:900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .search-box {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .search-box #searchInput {
+        grid-column: 1 / -1;
+    }
+
+    .navbar_inner {
+        height: auto;
+        min-height: 80px;
+    }
+
+    .navbar_brand,
+    .navbar_user {
+        font-size: 1.1rem;
+    }
+
+    .navbar_menu a {
+        padding-inline: 12px;
+        font-size: 1.05rem;
+    }
+
+    .popup-layout {
+        grid-template-columns: 1fr 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar_inner {
+        grid-template-columns: 1fr auto;
+        padding: 12px 16px;
+    }
+
+    .navbar_brand {
+        font-size: 1rem;
+    }
+
+    .navbar_menu {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .navbar_menu a {
+        height: auto;
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    .navbar_user {
+        gap: 8px;
+        font-size: 0.9rem;
+    }
+
+    .avatar {
+        display: block;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-box {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 24px 16px 40px;
+    }
+
+    .tabs {
+        gap: 8px;
+    }
+
+    .tab {
+        flex: 1 1 30%;
+        padding-inline: 10px;
+    }
+
+    .card .thumb {
+        height: 180px;
+    }
+
+    .popup {
+        padding: 10px;
+    }
+
+    .popup-box {
+        max-height: 94vh;
+        padding: 12px;
+    }
+
+    .popup-banner {
+        height: 180px;
+    }
+
+    .popup-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .popup-harga {
+        position: static;
+    }
+
+    .popup-info {
+        grid-template-columns: 1fr;
+    }
+
+    .popup-info > div + div {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+    }
+}
+
+/* ---------- Navbar dan footer ---------- */
+.navbar {
+    background: var(--brown, #7b573f);
+    color: var(--card, #fffaf2);
+    font-family: "Poppins", system-ui, sans-serif;
+}
+
+.navbar_inner {
+    width: min(calc(100% - 32px), 1200px);
+    min-height: 80px;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.navbar_brand {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.navbar_menu {
+    display: flex;
+    height: 80px;
+    gap: 8px;
+}
+
+.navbar_menu a {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 0 18px;
+    border-bottom: 4px solid transparent;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.navbar_menu a.active {
+    border-bottom-color: var(--sand, #dfcfbd);
+    font-weight: 600;
+}
+
+.navbar_user {
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    gap: 18px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.avatar {
+    display: block;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbar a:hover {
+    opacity: 0.7;
+}
+
+.navbar a:focus-visible {
+    outline-color: #fff;
+}
+
+.footer {
+    width: 100%;
+    margin-top: auto;
+    padding: 24px 16px;
+    background: var(--brown, #7b573f);
+    color: var(--card, #fffaf2);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer_inner {
+    width: min(calc(100% - 32px), 1200px);
+    margin: 0 auto;
+}
+
+.footer p {
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .navbar_inner {
+        grid-template-columns: 1fr auto;
+        height: auto;
+        row-gap: 8px;
+        padding: 12px 0;
+    }
+
+    .navbar_menu {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        height: auto;
+        gap: 8px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .navbar_menu a {
+        height: auto;
+        padding: 8px 12px;
+        font-size: 1rem;
+    }
+
+    .navbar_brand,
+    .navbar_user {
+        font-size: 1rem;
+    }
+
+    .navbar_user {
+        gap: 8px;
+    }
+
+    .avatar {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar_brand,
+    .navbar_user {
+        font-size: 0.95rem;
+    }
+
+    .avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+    .navbar_menu {
+        gap: 4px;
+    }
+
+    .navbar_menu a {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}

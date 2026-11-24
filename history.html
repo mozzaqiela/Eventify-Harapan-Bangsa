@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History – Event Harapan Bangsa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="history.css">
+    <link rel="stylesheet" href="../login/login.css">
+</head>
+<body>
+    <header class="navbar">
+    <div class="navbar_inner">
+        <a href="../home/index.html" class="navbar_brand">Event Harapan Bangsa</a>
+        <nav class="navbar_menu" aria-label="Menu utama">
+            <a href="../home/index.html">Home</a>
+            <a href="../acara/acara.html">Event</a>
+            <a href="../history/history.html" class="active" aria-current="page">History</a>
+            <a href="../about/about.html">About</a>
+        </nav>
+        <div class="navbar_user">
+            <span>Account</span>
+            <img class="avatar" src="assets/image/profile.png" alt="Foto profil">
+        </div>
+    </div>
+    </header>
+    <main class="page">
+    <div class="page-head">
+        <h1 class="page__title">Riwayat Pemesanan</h1>
+        <a href="../acara/acara.html" class="btn btn--outline btn--inline">Jelajahi acara</a>
+    </div>
+
+    <!-- Pencarian -->
+    <form class="toolbar" id="toolbar" role="search">
+        <input type="search" id="q" placeholder="Cari nama acara atau nomor pesanan" aria-label="Cari pesanan">
+        <div class="pill-select">
+            <select id="tanggal" aria-label="Filter tanggal acara">
+            <option value="semua">Semua tanggal</option>
+            <option value="mendatang">Akan datang</option>
+            <option value="lewat">Sudah lewat</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn--primary btn--inline">Cari pesanan</button>
+    </form>
+
+    <!-- Filter kategori -->
+    <div class="chips" id="chips" role="group" aria-label="Filter kategori acara">
+        <button type="button" class="chip is-active" data-kategori="semua" aria-pressed="true">Semua (<span data-count="semua">0</span>)</button>
+        <button type="button" class="chip" data-kategori="Workshop" aria-pressed="false">Workshop (<span data-count="Workshop">0</span>)</button>
+        <button type="button" class="chip" data-kategori="Seminar" aria-pressed="false">Seminar (<span data-count="Seminar">0</span>)</button>
+    </div>
+
+    <div class="result-bar">
+        <strong id="countText">0 pesanan</strong>
+        <label class="sort">Diurutkan dari
+            <select id="urut">
+            <option value="terbaru">pesanan terbaru</option>
+            <option value="terlama">pesanan terlama</option>
+            </select>
+        </label>
+    </div>
+
+    <section id="orderList" class="order-list" aria-live="polite"></section>
+    <p id="empty" class="empty" hidden>Belum ada pesanan atau tidak ada yang cocok dengan pencarianmu.</p>
+    </main>
+
+    <footer class="footer">
+        <div class="footer_inner">
+            <p>&copy; 2026 Event Harapan Bangsa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Popup konfirmasi pembatalan -->
+    <div class="modal" id="cancelModal" hidden>
+        <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="cancelTitle">
+        <h2 id="cancelTitle">Batalkan pesanan?</h2>
+        <p class="modal__sub" id="cancelText"></p>
+        <p class="policy">
+            Pesanan hanya dapat dibatalkan <strong>sebelum H-3</strong> acara. Batas pembatalan pesanan ini:
+            <strong id="cancelDeadline"></strong>. Pembatalan tidak dapat diurungkan.
+        </p>
+        <div class="modal__actions modal__actions--row">
+            <button type="button" class="btn btn--outline btn--small" id="cancelNo">Kembali</button>
+            <button type="button" class="btn btn--danger btn--small" id="cancelYes">Ya, batalkan</button>
+        </div>
+        </div>
+    </div>
+
+    <!-- Popup detail pesanan (gambar tiket + QR) -->
+    <div class="modal" id="ticketModal" hidden>
+        <div class="modal__box modal__box--wide" role="dialog" aria-modal="true" aria-labelledby="ticketTitle">
+        <h2 id="ticketTitle">Detail pesanan</h2>
+        <p class="modal__sub" id="ticketSub"></p>
+        <canvas id="ticketCanvas" class="ticket-canvas" aria-label="Tiket dengan QR code"></canvas>
+        <div class="modal__actions">
+            <button type="button" class="btn btn--primary" id="btnDownload">Download tiket</button>
+            <button type="button" class="btn btn--outline btn--small" id="ticketClose">Tutup</button>
+        </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" hidden></div>
+    <script src="../jquery-4.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+    <script src="../login/login.js"></script>
+    <script src="history.js"></script>
+</body>
+</html>

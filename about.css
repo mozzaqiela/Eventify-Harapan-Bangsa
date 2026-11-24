@@ -1,0 +1,502 @@
+/* ===== Warna yang dipakai (sama seperti halaman lain) ===== */
+:root {
+  --brown: #7b573f;
+  --brown-dark: #654530;
+  --bg: #f1e9df;
+  --card: #fffaf2;
+  --border: #b99f88;
+  --sand: #dfcfbd;
+  --ink: #2c1d13;
+  --muted: #6e5848;
+}
+
+/* ===== Pengaturan umum ===== */
+
+/* Hapus jarak bawaan browser, dan hitung padding di dalam ukuran elemen */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body: font, warna, dan susunan kolom supaya footer selalu di bawah */
+body {
+  font-family: "Poppins", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Link tanpa garis bawah dan warna mengikuti teks sekitarnya */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ===== Navbar ===== */
+
+/* Latar navbar */
+.navbar {
+  background: var(--brown);
+  color: var(--card);
+}
+
+/* Isi navbar: grid 3 kolom (brand | menu | akun) */
+.navbar_inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 80px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+/* Nama website di kiri */
+.navbar_brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+/* Menu di tengah, disusun menyamping dengan flexbox */
+.navbar_menu {
+  display: flex;
+  gap: 8px;
+  height: 100%;
+}
+
+/* Tiap link menu, garis bawah transparan supaya tinggi sama saat active */
+.navbar_menu a {
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  font-size: 1.3rem;
+  border-bottom: 4px solid transparent;
+}
+
+/* Menu halaman yang sedang dibuka diberi garis bawah */
+.navbar_menu a.active {
+  border-bottom-color: var(--sand);
+}
+
+/* Bagian akun di kanan */
+.navbar_user {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+/* Lingkaran avatar */
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+/* Efek redup saat kursor di atas link navbar */
+.navbar a:hover {
+  opacity: 0.7;
+}
+
+/* ===== Judul halaman ===== */
+.page-header {
+  background: #e8decf;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.page-header p {
+  color: var(--muted);
+}
+
+/* ===== Konten utama ===== */
+
+/* Lebar konten dibatasi dan diletakkan di tengah */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Jarak antar bagian */
+main section {
+  margin-top: 40px;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+/* ===== Bagian tentang: 2 kolom pakai CSS Grid ===== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-grid p {
+  color: var(--muted);
+}
+
+/* Logo dengan bingkai putih */
+.about-grid img {
+  width: 70%;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+/* ===== Kartu (dipakai di tujuan, tab, dan FAQ) ===== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.card p {
+  color: var(--muted);
+}
+
+.card h3 {
+  color: var(--brown-dark);
+  margin-bottom: 5px;
+}
+
+/* Tiga kartu berjajar sama lebar */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ===== Tab fitur ===== */
+
+/* Tombol tab berjajar menyamping */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* Tampilan tombol tab biasa */
+.tab {
+  padding: 8px 20px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--card);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Tab yang sedang dipilih */
+.tab.active {
+  background: var(--brown);
+  border-color: var(--brown);
+  color: #fff;
+}
+
+/* ===== FAQ ===== */
+
+/* Kartu FAQ: padding dipindah ke tombol dan jawaban */
+.faq {
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+/* Tombol pertanyaan memenuhi lebar kartu */
+.faq-tanya {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Teks jawaban */
+.faq-jawab {
+  padding: 0 20px 16px;
+}
+
+/* ===== Anggota kelompok ===== */
+
+/* Teks kecil di bawah judul bagian */
+.sub {
+  margin: -10px 0 15px;
+  color: var(--muted);
+}
+
+/* Empat kartu anggota sama lebar */
+.anggota-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Kartu satu anggota */
+.anggota {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: var(--card);
+  text-align: center;
+}
+
+/* Frame foto berbentuk kotak 3:4 */
+.foto {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  margin-bottom: 12px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: var(--sand);
+  overflow: hidden;
+}
+
+/* Huruf awal nama di tengah frame (tampil kalau foto belum ada) */
+.foto span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--brown);
+}
+
+/* Foto menutupi seluruh frame dan dipotong rapi */
+.foto img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Nama dan NIM anggota */
+.anggota h3 {
+  font-size: 1rem;
+  color: var(--brown-dark);
+}
+
+.anggota p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: var(--brown);
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  padding: 40px 20px;
+}
+
+/* ===== Responsive: tablet (lebar maksimal 900px) ===== */
+@media (max-width: 900px) {
+  /* Kolom disusun ke bawah (1 kolom) */
+  .about-grid,
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Anggota jadi 2 kolom */
+  .anggota-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Ukuran tulisan navbar diperkecil */
+  .navbar_brand,
+  .navbar_user {
+    font-size: 1.1rem;
+  }
+
+  .navbar_menu a {
+    padding: 0 12px;
+    font-size: 1.05rem;
+  }
+}
+
+/* ===== Responsive: smartphone (lebar maksimal 600px) ===== */
+@media (max-width: 600px) {
+  /* Navbar jadi 2 baris: brand + akun di atas, menu di bawah */
+  .navbar_inner {
+    grid-template-columns: 1fr auto;
+    height: auto;
+    padding: 12px 16px;
+  }
+
+  .navbar_menu {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: center;
+  }
+
+  .navbar_menu a {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ---------- Navbar dan footer ---------- */
+.navbar {
+  background: var(--brown, #7b573f);
+  color: var(--card, #fffaf2);
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+.navbar_inner {
+  width: min(calc(100% - 32px), 1200px);
+  min-height: 80px;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.navbar_brand {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.navbar_menu {
+  display: flex;
+  height: 80px;
+  gap: 8px;
+}
+
+.navbar_menu a {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 18px;
+  border-bottom: 4px solid transparent;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.navbar_menu a.active {
+  border-bottom-color: var(--sand, #dfcfbd);
+  font-weight: 600;
+}
+
+.navbar_user {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  gap: 18px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.avatar {
+  display: block;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.navbar a:hover {
+  opacity: 0.7;
+}
+
+.navbar a:focus-visible {
+  outline-color: #fff;
+}
+
+.footer {
+  width: 100%;
+  margin-top: auto;
+  padding: 24px 16px;
+  background: var(--brown, #7b573f);
+  color: var(--card, #fffaf2);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer_inner {
+  width: min(calc(100% - 32px), 1200px);
+  margin: 0 auto;
+}
+
+.footer p {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .navbar_inner {
+    grid-template-columns: 1fr auto;
+    height: auto;
+    row-gap: 8px;
+    padding: 12px 0;
+  }
+
+  .navbar_menu {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    height: auto;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .navbar_menu a {
+    height: auto;
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+
+  .navbar_brand,
+  .navbar_user {
+    font-size: 1rem;
+  }
+
+  .navbar_user {
+    gap: 8px;
+  }
+
+  .avatar {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar_brand,
+  .navbar_user {
+    font-size: 0.95rem;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .navbar_menu {
+    gap: 4px;
+  }
+
+  .navbar_menu a {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Acara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="../login/login.css">
+</head>
+<body>
+
+    <header class="navbar">
+    <div class="navbar_inner">
+        <a href="../home/index.html" class="navbar_brand">Event Harapan Bangsa</a>
+        <nav class="navbar_menu" aria-label="Menu utama">
+            <a href="../home/index.html">Home</a>
+            <a href="../acara/acara.html" class="active" aria-current="page">Event</a>
+            <a href="../history/history.html">History</a>
+            <a href="../about/about.html">About</a>
+        </nav>
+        <div class="navbar_user">
+            <span>Account</span>
+            <img class="avatar" src="assets/image/profile.png" alt="Foto profil">
+        </div>
+    </div>
+    </header>
+
+    <main>
+
+        <h1> Daftar Acara - Event Harapan Bangsa</h1>
+        <p class="subtitle">Jelajahi berbagai acara menarik yang diselenggarakan oleh Event Harapan Bangsa</p>
+
+        <div class="search-box">
+            <input type="text" placeholder="Jelajahi acaramu disini!" id="searchInput">
+            <select id="sortHarga">
+                <option value="terbaru">Terbaru</option>
+                <option value="termurah">Termurah</option>
+                <option value="termahal">Termahal</option>
+            </select>
+            <input type="date" id="tanggal" title="Pilih tanggal acara">
+            <button type="button" class="btn" id="search-btn">Cari Acara</button> 
+        </div>
+
+        <div class="tabs" id="tabs">
+            <button type="button" class="tab active" data-tab="semua">Semua</button>
+            <button type="button" class="tab" data-tab="seminar">Seminar</button>
+            <button type="button" class="tab" data-tab="workshop">Workshop</button>
+        </div>
+
+        <p class="result-pencarian" id="resultPencarian"></p>
+
+        <section class="grid" id="daftarAcara">
+            <p class="empty" id="EmptyState">Tidak ada acara yang ditemukan.</p>
+        </section>
+    </main>
+
+    <div class="popup" id="popupAcara" hidden>
+        <div class="popup-box" role="dialog" aria-modal="true" aria-labelledby="popupJudul">
+            <button type="button" class="popup-close" id="popupTutup" aria-label="Tutup detail acara">&times;</button>
+
+            <div class="popup-banner" id="popupBanner" role="img" aria-label="Poster acara"></div>
+
+            <div class="popup-layout">
+                <div class="popup-main">
+                    <span class="badge" id="popupKategori"></span>
+                    <h2 id="popupJudul"></h2>
+
+                    <div class="popup-info">
+                        <div><span>Tanggal</span><strong id="popupTanggal"></strong></div>
+                        <div><span>Waktu</span><strong id="popupWaktu"></strong></div>
+                        <div><span>Lokasi</span><strong id="popupLokasi"></strong></div>
+                    </div>
+
+                    <h3>Deskripsi</h3>
+                    <p class="popup-deskripsi" id="popupDeskripsi"></p>
+
+                    <h3>Jadwal</h3>
+                    <ul class="popup-jadwal" id="popupJadwal"></ul>
+                </div>
+
+                <aside class="popup-harga">
+                    <h3>Harga Tiket</h3>
+                    <small id="popupHargaLabel">Mulai dari</small>
+                    <p class="popup-price" id="popupHarga"></p>
+                    <dl>
+                        <dt>Tanggal</dt><dd id="popupTanggal2"></dd>
+                        <dt>Lokasi</dt><dd id="popupLokasi2"></dd>
+                    </dl>
+                    <a class="btn popup-btn" id="popupPesan" href="#">Pesan Tiket</a>
+                    <button type="button" class="btn-outline popup-btn" id="popupKembali">Kembali ke Daftar Acara</button>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer_inner">
+            <p>&copy; 2026 Event Harapan Bangsa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../jquery-4.0.0.js"></script>
+    <script src="../login/login.js"></script>
+    <script src="acara.js"></script>
+    
+</body>
+</html>

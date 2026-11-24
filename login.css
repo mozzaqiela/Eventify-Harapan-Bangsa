@@ -1,0 +1,156 @@
+/* ===== CSS popup login & daftar ===== */
+
+/* Latar gelap yang menutupi seluruh layar, isinya di tengah */
+.popup-login {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(44, 29, 19, 0.6);
+}
+
+/* Supaya atribut hidden tetap menyembunyikan popup */
+.popup-login[hidden] {
+  display: none;
+}
+
+/* Kotak putih berisi form (bisa di-scroll kalau layar pendek) */
+.login-box {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 28px;
+  border-radius: 15px;
+  background: #fffaf2;
+  color: #2c1d13;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+.login-box h2 {
+  margin-bottom: 4px;
+}
+
+/* Teks keterangan kecil di bawah judul */
+.login-box .info {
+  margin-bottom: 14px;
+  color: #6e5848;
+  font-size: 0.9rem;
+}
+
+/* Tulisan di atas kolom isian */
+.login-box label {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Kolom isian penuh selebar kotak */
+.login-box input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #b99f88;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.password-field {
+  position: relative;
+}
+
+.password-field input {
+  padding-right: 42px;
+}
+
+.login-box .password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  transform: translateY(-50%);
+  place-items: center;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #42536b;
+  cursor: pointer;
+}
+
+.password-toggle svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+.login-box .password-toggle:hover {
+  color: #7b573f;
+}
+
+.login-box .password-toggle:focus-visible {
+  outline: 2px solid #7b573f;
+  outline-offset: 1px;
+}
+
+/* Tombol Masuk / Daftar */
+.login-box button[type="submit"] {
+  width: 100%;
+  margin-top: 16px;
+  padding: 11px;
+  border: none;
+  border-radius: 8px;
+  background: #7b573f;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-box button[type="submit"]:hover {
+  background: #654530;
+}
+
+/* Tombol X di pojok kanan atas */
+.login-box .tutup {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  border: none;
+  background: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* Tulisan "Belum punya akun? Daftar" */
+.login-box .ganti {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.login-box .ganti a {
+  color: #7b573f;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Pesan error berwarna merah */
+.login-box .error {
+  margin-top: 10px;
+  color: #b3261e;
+  font-size: 0.9rem;
+}
+
+/* Nama akun di navbar bisa diklik (untuk login/keluar) */
+.navbar_user {
+  cursor: pointer;
+}
